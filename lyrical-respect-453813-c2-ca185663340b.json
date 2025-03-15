@@ -1,0 +1,13 @@
+{
+  "type": "service_account",
+  "project_id": "lyrical-respect-453813-c2",
+  "private_key_id": "ca185663340b3766d6a5ccd9f9fb5d44aa256bdc",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvQIBADANBgkqhkiG9w0BAQEFAASCBKcwggSjAgEAAoIBAQCeQwH8N/kBAxyB\nH7khnq2ueFMSq+D/SXjJ6BMPhev6jVFn4JNkXiDY2lUSmB8269Fhu9b9vvNyiV0i\n++S+XWOFZ4QI8gjmovrxUcAHgiUHnD4D6+iTsEHCu2x4YCFNXvfZZhTWBY4btqwG\n4tj5tebqBT01izrUNIYWnZIbdQDnXuKivTrxgAS1LBRaOsVdNsY+wy6Mcgp7Qinn\nIeNXvMKgaDIx4Wnczto5WOaFD6or7yzhYXKrny4YvnriD53VPUA/1uk80bWpyED6\ng3hLLgrBhk+0BGeVAmwRSqvDdPmWAejGD6fChR5BHIwC9ybr4++RaGH8Ut2I5E3V\ngdbo/PlhAgMBAAECggEAAYNNeQ5F7JsNgjR97hLYwTK4RJTtDTO0GmYEDKFwnJAO\nR6pvbkWyFbCcoJVgswM1GLSVfQ5+wEkM4WE8Eg/NfEB9lCJQMHg9YuIvrkKxvO1i\n8GGocwT70/M7ubjdiKJQRz1BFLyv25b29QflIBn7j6AmMiVXFiE8aOnvtCB9tjh/\nntPq3eHZibicAaZz59/8A1+YrYNZX157Ih4cH+D1zXlSKjiDdE/MTqbp2SQLmCyE\nzNVxkHtMMbdN57cxR47FZlSAwW4G0nv3T421ZgXH/dEAokpoeatqI1NuJrk6IYVx\nvNAJqVpH3c4eyGpK7WgrK8GblKq3tCk7hBOE6Bff8wKBgQDe4ovqQbTyBg2TgjdV\n8u6H1mh2sdrHYoIC9RegKlitL5GlSNPH7KRc53g0pD+w87R+DGFoZr5FiqoLbURl\nSorW7kZcDT86fx7B9m8BYqyh09aWU4wmzYUYUKYKLK/9p124FFMcHpHzUgK4SV9f\nFa7diIuZu1cdb+a8SGVYJBI3kwKBgQC1xoLBV9oFK7AVRVX0FSFEL7c/4R4nOK7I\n7DhWYxb8IiDcx0Ttzvb0c+hBE7qhEpcKoJjnxXIZyb0lSJ+AJvketEk2YbeQAHTe\nN1qP8aBBQKN8X25WZ4JPKNAokyRAepAP5lX+GT9JIwBAm4dLvT4HPKSp51+17oUo\naO8lPFK7uwKBgQDdmzB0HRqU3PHYrUrpmR4TT1oUUefuAIK2AAyagiAjKb3NMejn\nyeDuQnLhHEH7ZYQbI6IiFK2wJRvHOsAbWg9LfiPU2JL6TXQ+dBCQtxRf3mlok+8w\nkX143I8KZL4jHKpxITw1JCwHWo47vzAlMUDpIR90HbGTIjSvFeg1x7+ZIwKBgEwl\nspTH9p7/5C2k9BLh3yOvUXbDGVyY1C97NUaLEA/jRBz4pRlx/+X7wCmy2BWtsfRT\nvnopLlk7N68ssxR+PxHruFe9q6X5avvD+H4gXF+5ckMhvxkXF3GNyVWV/jO8pCjk\n9tURQn+i1/I4tP63cgqaDujV8jRGjSWWf8f7czUNAoGAMuaIX4/jD3ezL8dHnPDO\ncDljIB36aQokRdmenOCZzbHfnz6hiaogaowR+yysP+2cNGgSwi59a3rd4ufAYFGn\nyW47z9bLm3TWKjKdAH5wKfttVL7booM7oJzIVmjcKGgi/FaQ4L8CiBunySREK6HT\nrjQaR4S1aWFtUwlPI37Rq8Y=\n-----END PRIVATE KEY-----\n",
+  "client_email": "venomultrasniper@lyrical-respect-453813-c2.iam.gserviceaccount.com",
+  "client_id": "108427747766155366066",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/venomultrasniper%40lyrical-respect-453813-c2.iam.gserviceaccount.com",
+  "universe_domain": "googleapis.com"
+}
