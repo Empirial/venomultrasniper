@@ -5,7 +5,7 @@ import sendEmail from './emailTemplate.js';
 import axios from 'axios';
 
 const WEBSITEURL = 'https://www.venomultrasniper.co.za'; // Update with your Ngrok URL
-const PAYPAL_WEBHOOK_URL = 'https://www.venomultrasniper.co.za/paypal-webhook';
+const PAYPAL_WEBHOOK_URL = 'https://venomultrasniper.onrender.com/webhook/paypal';
 
 const PAYPAL_CLIENT_ID = 'AcmdeCLvIpOnkU_9MGPXpnOVXbsGjFuLLlI7gwDMerztXTd1c8vFxOJ3WeXV5vvoH5_0jTIMkXTQjMzF';
 const PAYPAL_SECRET = 'ECPXR1gKicEEhQGKXb0VWR8cud_qIglyasKPiO7GU0TFebKy7MelNTk_73x2AHuqNmagwJ0jJ2wXW-Ex';
@@ -57,7 +57,7 @@ async function registerPayPalWebhook() {
 //registerPayPalWebhook();
 
 const app = express();
-const port = 3000;
+const port = 10000;
 
 app.use(bodyParser.json());
 
@@ -91,6 +91,7 @@ app.post('/paypal-webhook', async (req, res) => {
   res.sendStatus(200); // Respond to PayPal to acknowledge the webhook
 });
 
-app.listen(port, () => {
+const PORT = process.env.PORT || 10000;
+app.listen(port,'0.0.0.0', () => {
   console.log(`Server running on http://localhost:${port}`);
 });
