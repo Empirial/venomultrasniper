@@ -1,35 +1,46 @@
-import { createTransport } from 'nodemailer';
+import nodemailer from 'nodemailer';
+import { google } from 'googleapis';
 
-// Create a transporter object using Gmail
-const transporter = createTransport({
-  host: 'smtp.gmail.com', // Change to your SMTP host (e.g., smtp.gmail.com)
-  port: 587, // Or 465 for SSL
-  secure: false, // true for 465, false for other ports
-  requireTLS: true, // Ensures TLS is used
-  auth: {
-    user: 'mphelalufuno1.0@gmail.com',
-    pass: 'salmgbvixmlgtkdv',
-  },
-});
+const CLIENT_ID = '837872949349-6pmm5784e71fcdh348j6l752ceb4io4d.apps.googleusercontent.com';
+const CLIENT_SECRET = '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';
+const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
+const REFRESH_TOKEN = '1//04pudC9LRxXStCgYIARAAGAQSNwF-L9Ir1RVQdVYZ9aqVSatl8qTTNVuBNEBn6eM_7KKEaK48wb9cCfyvGvg3bE4r9n_DeDfmY0Q';
+const USER_EMAIL = 'emmanuelrivombo03@gmail.com';
 
-function sendEmail(email_address, subject, text) {
- console.log('Sending email to:', email_address);
+const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
+oAuth2Client.setCredentials({ refresh_token: REFRESH_TOKEN });
 
-  const mailOptions = {
-    from: 'mphelalufuno1.0@gmail.com', // Your email
-    to: email_address, // Define email_address here
-    subject: subject, // Use the subject parameter
-    text: text, // Use the text parameter
-  };
+async function sendEmail(email_address, subject, text) {
+  try {
+    const accessToken = await oAuth2Client.getAccessToken();
 
-  transporter.sendMail(mailOptions, (error, info) => {
-    if (error) {
-      console.error('Error sending email:', error);
-    } else {
-      console.log('Email sent:', info.response);
-    }
-  });
+    const transporter = nodemailer.createTransport({
+      service: 'gmail',
+      auth: {
+        type: 'OAuth2',
+        user: USER_EMAIL,
+        clientId: CLIENT_ID,
+        clientSecret: CLIENT_SECRET,
+        refreshToken: REFRESH_TOKEN,
+        accessToken: accessToken.token,
+      },
+    });
+
+    const mailOptions = {
+      from: `Venom Ultra Sniper <${USER_EMAIL}>`,
+      to: email_address,
+      subject: subject,
+      text: text,
+    };
+
+    const result = await transporter.sendMail(mailOptions);
+    console.log(`Email sent successfully to ${email_address}`);
+    return result;
+  } catch (error) {
+    console.error('Error sending email:', error);
+  }
 }
 
 export default sendEmail;
+
 

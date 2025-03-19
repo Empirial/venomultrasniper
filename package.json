@@ -7,6 +7,7 @@
     "exceljs": "^4.4.0",
     "express": "^4.21.2",
     "git": "^0.1.5",
+    "googleapis": "^146.0.0",
     "nodemailer": "^6.10.0",
     "xlsx": "^0.18.5"
   }
