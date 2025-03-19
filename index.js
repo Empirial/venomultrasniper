@@ -5,10 +5,10 @@ import sendEmail from './emailTemplate.js';
 import axios from 'axios';
 
 const WEBSITEURL = 'https://www.venomultrasniper.co.za'; // Update with your Ngrok URL
-const PAYPAL_WEBHOOK_URL = 'https://venomultrasniper.onrender.com/webhook/paypal';
+const PAYPAL_WEBHOOK_URL = 'https://www.venomultrasniper.co.za/paypal-webhook';
 
-const PAYPAL_CLIENT_ID = 'AcmdeCLvIpOnkU_9MGPXpnOVXbsGjFuLLlI7gwDMerztXTd1c8vFxOJ3WeXV5vvoH5_0jTIMkXTQjMzF';
-const PAYPAL_SECRET = 'ECPXR1gKicEEhQGKXb0VWR8cud_qIglyasKPiO7GU0TFebKy7MelNTk_73x2AHuqNmagwJ0jJ2wXW-Ex';
+const PAYPAL_CLIENT_ID = 'AX7kdtBkf0GoNx7yv1PR5hAThEjzQI6lttiAjGBGuuoGXI-0VS_f_Fla2c2IG3i-5tDry5g5qUb7WFTK';
+const PAYPAL_SECRET = 'EB-uGmUQBXpV1dvWAf9g9vu1mm9cmYwViAhX1kgxPI0MnewXgknyOFhlbkYU7GLi3bUCxLbfM3RnviZZ';
 
 async function getPayPalAccessToken() {
   try {
