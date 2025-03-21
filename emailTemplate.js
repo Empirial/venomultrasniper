@@ -4,7 +4,7 @@ import { google } from 'googleapis';
 const CLIENT_ID = '837872949349-6pmm5784e71fcdh348j6l752ceb4io4d.apps.googleusercontent.com';
 const CLIENT_SECRET = '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';
 const REDIRECT_URI = 'https://developers.google.com/oauthplayground';
-const REFRESH_TOKEN = '1//04pudC9LRxXStCgYIARAAGAQSNwF-L9Ir1RVQdVYZ9aqVSatl8qTTNVuBNEBn6eM_7KKEaK48wb9cCfyvGvg3bE4r9n_DeDfmY0Q';
+const REFRESH_TOKEN = '1//04Pu5hf0JX2uvCgYIARAAGAQSNwF-L9IrMQizUG5G62HEjnK6EuqHKeFtTvCUoPZxE_MPmvlrGsv0-YmcTV6ADI5cCC07P3v5i9o';
 const USER_EMAIL = 'emmanuelrivombo03@gmail.com';
 
 const oAuth2Client = new google.auth.OAuth2(CLIENT_ID, CLIENT_SECRET, REDIRECT_URI);
