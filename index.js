@@ -7,6 +7,7 @@ import axios from 'axios';
 const WEBSITE_URL = 'https://www.venomultrasniper.co.za';
 const PAYPAL_WEBHOOK_URL = 'https://www.venomultrasniper.co.za/paypal-webhook';
 
+// PayPal Credentials - Ideally load from environment variables in production
 const PAYPAL_CLIENT_ID = 'AX7kdtBkf0GoNx7yv1PR5hAThEjzQI6lttiAjGBGuuoGXI-0VS_f_Fla2c2IG3i-5tDry5g5qUb7WFTK';
 const PAYPAL_SECRET = 'EB-uGmUQBXpV1dvWAf9g9vu1mm9cmYwViAhX1kgxPI0MnewXgknyOFhlbkYU7GLi3bUCxLbfM3RnviZZ';
 
@@ -29,37 +30,16 @@ async function getPayPalAccessToken() {
   }
 }
 
-async function registerPayPalWebhook() {
-  const accessToken = await getPayPalAccessToken();
-  if (!accessToken) return;
-
-  try {
-    const response = await axios.post(
-      'https://api-m.paypal.com/v1/notifications/webhooks',
-      {
-        url: PAYPAL_WEBHOOK_URL,
-        event_types: [{ name: 'PAYMENT.CAPTURE.COMPLETED' }],
-      },
-      {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${accessToken}`,
-        },
-      }
-    );
-    console.log('PayPal Webhook registered:', response.data);
-  } catch (error) {
-    console.error('Error registering PayPal webhook:', error.response?.data || error.message);
-  }
-}
-
 async function verifyWebhookSignature(req) {
   const accessToken = await getPayPalAccessToken();
   if (!accessToken) return false;
 
   const headers = req.headers;
+  console.log('Webhook Headers:', headers); // Useful for debugging
+  console.log('Webhook Payload:', req.body);
+
   const verificationBody = {
-    webhook_id: '9M995526S3884594J',  // Set your live webhook ID from PayPal Dashboard
+    webhook_id: '9M995526S3884594J', // Replace with your actual live webhook ID
     transmission_id: headers['paypal-transmission-id'],
     transmission_time: headers['paypal-transmission-time'],
     cert_url: headers['paypal-cert-url'],
@@ -85,9 +65,6 @@ async function verifyWebhookSignature(req) {
     return false;
   }
 }
-
-// Uncomment to register the webhook (use it only when needed to avoid duplication)
-// registerPayPalWebhook();
 
 const app = express();
 const port = 10000;
